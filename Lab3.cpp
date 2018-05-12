@@ -3,6 +3,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<math.h>
+
 
 using std::string;
 using std::cin;
@@ -75,18 +77,87 @@ void ejercicio1(){
 }
 		
 void ejercicio2(){
-	/*String polinomio;
+	string polinomio;
 	cout<<"Ingrese el polinomio"<<endl;
 	cin>>polinomio;
 
-	string delimitador_cuadrado = "X^2";
+
+	int a, b, c;
+	string a_1;
+	string b_1;
+	string c_1;
+
+	int posicion1=0;
+	int centi = 0;
+	int posicion2;
+	double x;
+
+	for(int i=0; i<polinomio.length();i++){
+
+		if((polinomio[i]=='x' || polinomio[i]=='X')&&(centi==0)){
+			posicion1 = i;
+			centi++;
+		}else if ((polinomio[i]=='x' || polinomio[i]=='X')&&(centi==1)){
+			posicion2 = i;
+			centi++;
+		}
+	}
+
+	for(int j=0;j<posicion1;j++){
+	   a_1 +=polinomio[j];
+
+	}
+
+	for(int j=posicion1 + 3;j<posicion2;j++){
+		b_1 +=polinomio[j];
+
+	}
+	for(int j=posicion2+1;j<polinomio.length();j++){
+
+		c_1 +=polinomio[j];
+
+	}
+
+	//funciones 
+	a = atoi(a_1.c_str());
+	b = atoi(b_1.c_str());
+	c = atoi(c_1.c_str());
+
+	int cuadrado = pow(b,2);
+	int sqr = cuadrado-(4*a*c);
+	if(sqr<0){
+		cout<<"Su respuesta tiende a numeros imaginarios"<<endl;
+	}else{
+		x = -b+sqrt(sqr);
+
+		cout<< "(x + "<<x/2*a<<")(x - "<<x/2*a<<")"<<endl;
+	}
+
+
+	/*string delimitador_cuadrado = "X^2";
 	string delimitador_cuadrado_2 = "x^2";
 	string delimitador_1 = "X";
 	String delimitador_1_2 = "x";
-
 	string 
-*/
+	
 
+	char a;
+	char b;
+	char c;
+	
+
+	a = polinomio.spli('x')[0];
+	b= polinomio.split('x')[1];
+	c = polinomio.split('x')[2];
+
+        
+
+	cout<<"a : "<<a<<endl;
+	cout<<"b : "<<b<<endl;
+	cout<<"c : "<<c<<endl;
+		
+	
+*/
 
 
 
@@ -101,6 +172,7 @@ void ejercicio3(){
 
 	int vector[size];
 	int numero=0;
+	
 	srand(time(NULL));
 
 	for(int i=0;i<size;i++){
@@ -110,6 +182,7 @@ void ejercicio3(){
 		//numero = numero + rand() % 100 +1;
 	
 	}
+
 	int c = sizeof(vector)/sizeof(vector[0]);	
 	imprimirVector(vector,c);
 
